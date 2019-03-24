@@ -1,0 +1,13 @@
+{
+  "name": "deebee",
+  "version": "1.0.0",
+  "main": "app.js",
+  "license": "MIT",
+  "dependencies": {
+    "mongoose": "^5.4.19"
+  },
+  "devDependencies": {
+    "@types/mongoose": "^5.3.23",
+    "@types/node": "^11.11.6"
+  }
+}
