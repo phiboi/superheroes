@@ -36,7 +36,8 @@ const Hero = ({type}) => {
     setModal(false);
   }
 
-  const onAddHero = async () => {
+  const onAddHero = async (e) => {
+    e.stopPropagation();
     if (heroName.length === 0 || powerTags.length === 0) {
       return;
     }
@@ -50,8 +51,14 @@ const Hero = ({type}) => {
         'Content-Type': 'application/json'
       }
     }).then(val => val.json());
-    console.log(newHero);
     setHeroes([...heroes, newHero]);
+    setPowerTags([]);
+    setHeroName('');
+    setHeroAddMode(false);
+  }
+
+  const onCancel = (e) => {
+    e.stopPropagation();
     setHeroAddMode(false);
   }
 
@@ -95,7 +102,7 @@ const Hero = ({type}) => {
               ))}
               <div className="Button-group">
                 <Button onClick={onAddHero} type="primary" className="Button">Add</Button>
-                <Button>Cancel</Button>
+                <Button onClick={onCancel}>Cancel</Button>
               </div>
             </Fragment>
           ) : <Icon width={100} type="user-add" className="Add-icon"/>}
