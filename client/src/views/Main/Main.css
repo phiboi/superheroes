@@ -1,0 +1,30 @@
+.List {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.Wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+  width: 300px;
+}
+
+.Card:hover {
+  background: #f5f5f5;
+  cursor: pointer;
+}
+
+.Mongo-image {
+  width: 50%;
+  height: auto;
+  display: block;
+}
+
+.Ora-image {
+  width: 80%;
+  height: auto;
+  display: block;
+}
