@@ -20,7 +20,9 @@
     "mongoose": "^5.4.19",
     "mysql": "^2.16.0",
     "mysql2": "^1.6.5",
+    "npm-scripts": "^1.4.0",
     "prop-types": "^15.7.2",
+    "react-scripts": "^2.1.8",
     "sequelize": "^5.2.1"
   },
   "devDependencies": {

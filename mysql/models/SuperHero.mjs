@@ -1,17 +1,18 @@
-import { Sequelize } from "sequelize/types";
+import Sequelize from 'sequelize';
+import db from '../services/HeroesDB.mjs';
 
-class SuperHero extends Model {}
-SuperHero.init({
-    id : {
-        type: Sequelize.STRING,
-        allowNull: false
+const SuperHero = db.define('Superhero', {
+    id: {
+        autoIncrement: true,
+        type: Sequelize.INTEGER,
+        primaryKey: true
     },
-    name :{
+    name: {
         type: Sequelize.STRING
     }
-}, {
-    sequelize,
 });
+
+export default SuperHero;
 // CREATE TABLE Superhero
 // (
 //     id INT NOT NULL,

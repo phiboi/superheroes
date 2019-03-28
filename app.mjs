@@ -3,7 +3,7 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 import MongoRoutes from './mongo/routes/superheroes.mjs';
 import sqlRoutes from './mysql/routes/superheroes.mjs';
-import Sequelize from "sequelize";
+import db from './mysql/services/HeroesDB.mjs';
 import bodyParser from 'body-parser';
 
 const app = express();
@@ -15,8 +15,7 @@ mongoose
   .connect(mongoUri, { useNewUrlParser: true, dbName: 'superheroes' })
   .catch(console.error);
 
-const sequelize = new Sequelize('mysql://algonquin:algonquin@adt-mysql.czanlufceq0x.us-east-2.rds.amazonaws.com:3306/heroes');
-sequelize.authenticate()
+db.authenticate()
   .then(() => {
     console.log('Connection established!');
   })
@@ -24,7 +23,7 @@ sequelize.authenticate()
     console.error('Unable to connect: ', err);
   });
 app.use('/mongo', MongoRoutes);
-app.use('/oracle', sqlRoutes);
+app.use('/mysql', sqlRoutes);
 
 app.listen(3100, async () => {
   console.log('Listening to port 3100');
