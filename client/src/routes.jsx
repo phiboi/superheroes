@@ -8,7 +8,7 @@ export const Routes = () => (
     <Switch>
       <Route component={Main} path="/" exact/>
       <Route render={() => <Hero type="mongo"/>} path="/mongo"/>
-      <Route render={() => <Hero type="oracle"/>} path="/oracle"/>
+      <Route render={() => <Hero type="mysql"/>} path="/mysql"/>
     </Switch>
   </BrowserRouter>
 );

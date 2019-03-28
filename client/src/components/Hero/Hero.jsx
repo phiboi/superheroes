@@ -69,7 +69,7 @@ const Hero = ({type}) => {
         {heroes.length > 0 && heroes.map(({_id, name, powers}) => (
           <Card title={name} key={_id} className="Heroes-card Normal">
             <p><strong>Superpowers</strong></p>
-            {powers.map(power => (
+            {powers && powers.map(power => (
               <Tag className="Tag" key={power.name}>{power.name}</Tag>
             ))}
           </Card>
@@ -86,7 +86,7 @@ const Hero = ({type}) => {
               <Select className="Selector" value="Power">
                 <Option value="Power" disabled>Powers</Option>
                 <Option value="Add New Power" onClick={() => setModal(true)}>Add new power...</Option>
-                {powers.map(({_id, name}) => (
+                {powers && powers.map(({_id, name}) => (
                   <Option
                     onClick={(e) => setPowerTags([...powerTags, {name: e.key}])}
                     key={_id}
