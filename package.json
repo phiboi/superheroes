@@ -18,8 +18,10 @@
     "create-react-class": "^15.6.3",
     "express": "^4.16.4",
     "mongoose": "^5.4.19",
-    "oracledb": "^3.1.2",
-    "prop-types": "^15.7.2"
+    "mysql": "^2.16.0",
+    "mysql2": "^1.6.5",
+    "prop-types": "^15.7.2",
+    "sequelize": "^5.2.1"
   },
   "devDependencies": {
     "@types/cors": "^2.8.4",
